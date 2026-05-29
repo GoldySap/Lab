@@ -29,7 +29,7 @@ cd lab
 ### 2. Lag og aktiver virtuelt miljø
 
 ```bash
-python3 -m venv venv            # eller python -m venv venv hvis python3 ikke funker
+python -m venv venv
 source venv/bin/activate        # Linux / Raspberry Pi
 # venv\Scripts\activate         # Windows
 ```
