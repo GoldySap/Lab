@@ -146,6 +146,6 @@ lab/
 ## Mulige forbedringer
 
 - Legg til brukerautentisering (innlogging med passord).
-- Bruk miljøvariabler (`.env`-fil) for konfigurasjon.
 - Legg til sletting og redigering av brukere (DELETE / UPDATE).
 - HTTPS med SSL-sertifikat via Nginx som reverse proxy.
+- Legg til roller og tilgangs verifisering.
