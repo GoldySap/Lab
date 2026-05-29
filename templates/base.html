@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lab{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand">&#9670; Lab</a>
+        <a href="/">Hjem</a>
+        <a href="/legg-til">Legg til bruker</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

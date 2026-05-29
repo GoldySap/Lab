@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Forside – Lab{% endblock %}
+
+{% block content %}
+<h1>Brukere</h1>
+
+<div class="card">
+    {% if brukere %}
+    <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+        <thead>
+            <tr style="border-bottom:2px solid #e2e8f0; text-align:left;">
+                <th style="padding:0.6rem 0.8rem; color:#718096; font-weight:600;">ID</th>
+                <th style="padding:0.6rem 0.8rem; color:#718096; font-weight:600;">Navn</th>
+                <th style="padding:0.6rem 0.8rem; color:#718096; font-weight:600;">E-post</th>
+                <th style="padding:0.6rem 0.8rem; color:#718096; font-weight:600;">Handling</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bruker in brukere %}
+            <tr style="border-bottom:1px solid #f0f0f0;">
+                <td style="padding:0.7rem 0.8rem; color:#a0aec0;">{{ bruker[0] }}</td>
+                <td style="padding:0.7rem 0.8rem; font-weight:500;">{{ bruker[1] }}</td>
+                <td style="padding:0.7rem 0.8rem; color:#4a5568;">{{ bruker[2] }}</td>
+                <td style="padding:0.7rem 0.8rem;">
+                    <a href="/bruker/{{ bruker[1] }}" class="btn btn-outline" style="padding:0.3rem 0.8rem; font-size:0.82rem;">
+                        Vis profil
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="color:#718096; text-align:center; padding:2rem 0;">
+        Ingen brukere i databasen enda.
+    </p>
+    {% endif %}
+</div>
+
+<a href="/legg-til" class="btn btn-success">+ Legg til ny bruker</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ navn }} – Lab{% endblock %}
+
+{% block content %}
+<a href="/" class="btn btn-outline" style="margin-bottom:1.5rem; font-size:0.85rem;">
+    &larr; Tilbake
+</a>
+
+<div class="card" style="text-align:center; padding:2.5rem 1.5rem;">
+
+    <div style="
+        width: 72px; height: 72px;
+        border-radius: 50%;
+        background: #1a1a2e;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.2rem;
+    ">
+        {{ navn[0] | upper }}
+    </div>
+
+    <h1 style="margin-bottom:0.4rem;">Hei, {{ navn }}!</h1>
+    <p style="color:#718096; font-size:0.95rem;">Velkommen til Lab-appen.</p>
+
+    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+        <a href="/" class="btn btn-primary">Gå til forsiden</a>
+        <a href="/legg-til" class="btn btn-outline">Legg til bruker</a>
+    </div>
+</div>
+
+<div class="card" style="font-size:0.85rem; color:#718096;">
+    <strong style="color:#4a5568;">Teknisk info:</strong>
+    Denne siden bruker en Flask-route med URL-parameter:
+    <code style="background:#f4f6f9; padding:2px 6px; border-radius:4px; font-size:0.82rem;">
+        /bruker/&lt;navn&gt;
+    </code>
+    – Jinja2 setter inn <code style="background:#f4f6f9; padding:2px 6px; border-radius:4px;">{{ '{{ navn }}' }}</code> direkte i HTML.
+</div>
+{% endblock %}
